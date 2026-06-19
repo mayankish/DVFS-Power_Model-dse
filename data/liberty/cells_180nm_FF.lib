@@ -1,0 +1,323 @@
+/* ================================================================
+   CELLS_180NM_FF.lib  —  Generated Standard Cell Library
+   Corner    : Fast-Fast, −40°C, VDD=1.98V
+   Generated : 2026-06-03 08:41:06
+   Tool      : Synopsys_Projects_v2 / char/characterize.py
+   Delays    : scalar @ 10fF, full LUT in comments. Slew = 2×tprop.
+   ================================================================ */
+
+library (CELLS_180NM_FF) {
+
+  time_unit            : "1ps";
+  voltage_unit         : "1V";
+  current_unit         : "1uA";
+  capacitive_load_unit (1, pf);
+  leakage_power_unit   : "1nW";
+
+  nom_process    : 1.0;
+  nom_voltage    : 1.98;
+  nom_temperature: -40;
+
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (INV) {
+    area               : 2.88;
+    cell_leakage_power : 0.0030;
+
+    pin (A) {
+      direction   : input;
+      capacitance : 0.0017;
+    }
+    pin (Y) {
+      direction : output;
+      function  : "!A";
+      timing () {
+        related_pin  : "A";
+        timing_sense : negative_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [4.399, 9.677, 20.233, 55.421, 178.580] ps */
+        /* cell_fall LUT: [4.184, 9.205, 19.246, 52.718, 169.869] ps */
+        /* rise_transition LUT: [8.797, 19.353, 40.466, 110.843, 357.160] ps */
+        /* fall_transition LUT: [8.368, 18.409, 38.492, 105.436, 339.737] ps */
+        cell_rise        : 20.233;
+        cell_fall        : 19.246;
+        rise_transition  : 40.466;
+        fall_transition  : 38.492;
+      }
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (NAND2) {
+    area               : 4.32;
+    cell_leakage_power : 0.0050;
+
+    pin (A) {
+      direction   : input;
+      capacitance : 0.0022;
+    }
+    pin (B) {
+      direction   : input;
+      capacitance : 0.0022;
+    }
+    pin (Y) {
+      direction : output;
+      function  : "!(A&B)";
+      timing () {
+        related_pin  : "A";
+        timing_sense : negative_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [6.158, 11.436, 21.993, 57.181, 180.339] ps */
+        /* cell_fall LUT: [5.858, 10.878, 20.920, 54.391, 171.542] ps */
+        /* rise_transition LUT: [12.316, 22.872, 43.985, 114.362, 360.679] ps */
+        /* fall_transition LUT: [11.715, 21.757, 41.840, 108.783, 343.084] ps */
+        cell_rise        : 21.993;
+        cell_fall        : 20.920;
+        rise_transition  : 43.985;
+        fall_transition  : 41.840;
+      }
+      timing () {
+        related_pin  : "B";
+        timing_sense : negative_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [6.158, 11.436, 21.993, 57.181, 180.339] ps */
+        /* cell_fall LUT: [5.858, 10.878, 20.920, 54.391, 171.542] ps */
+        /* rise_transition LUT: [12.316, 22.872, 43.985, 114.362, 360.679] ps */
+        /* fall_transition LUT: [11.715, 21.757, 41.840, 108.783, 343.084] ps */
+        cell_rise        : 21.993;
+        cell_fall        : 20.920;
+        rise_transition  : 43.985;
+        fall_transition  : 41.840;
+      }
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (NOR2) {
+    area               : 5.04;
+    cell_leakage_power : 0.0050;
+
+    pin (A) {
+      direction   : input;
+      capacitance : 0.0028;
+    }
+    pin (B) {
+      direction   : input;
+      capacitance : 0.0028;
+    }
+    pin (Y) {
+      direction : output;
+      function  : "!(A|B)";
+      timing () {
+        related_pin  : "A";
+        timing_sense : negative_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [6.158, 11.436, 21.993, 57.181, 180.339] ps */
+        /* cell_fall LUT: [5.858, 10.878, 20.920, 54.391, 171.542] ps */
+        /* rise_transition LUT: [12.316, 22.872, 43.985, 114.362, 360.679] ps */
+        /* fall_transition LUT: [11.715, 21.757, 41.840, 108.783, 343.084] ps */
+        cell_rise        : 21.993;
+        cell_fall        : 20.920;
+        rise_transition  : 43.985;
+        fall_transition  : 41.840;
+      }
+      timing () {
+        related_pin  : "B";
+        timing_sense : negative_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [6.158, 11.436, 21.993, 57.181, 180.339] ps */
+        /* cell_fall LUT: [5.858, 10.878, 20.920, 54.391, 171.542] ps */
+        /* rise_transition LUT: [12.316, 22.872, 43.985, 114.362, 360.679] ps */
+        /* fall_transition LUT: [11.715, 21.757, 41.840, 108.783, 343.084] ps */
+        cell_rise        : 21.993;
+        cell_fall        : 20.920;
+        rise_transition  : 43.985;
+        fall_transition  : 41.840;
+      }
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (AND2) {
+    area               : 7.20;
+    cell_leakage_power : 0.0076;
+
+    pin (A) {
+      direction   : input;
+      capacitance : 0.0022;
+    }
+    pin (B) {
+      direction   : input;
+      capacitance : 0.0022;
+    }
+    pin (Y) {
+      direction : output;
+      function  : "A&B";
+      timing () {
+        related_pin  : "A";
+        timing_sense : positive_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [11.394, 16.672, 27.229, 62.417, 185.575] ps */
+        /* cell_fall LUT: [11.538, 16.559, 26.601, 60.072, 177.223] ps */
+        /* rise_transition LUT: [22.788, 33.345, 54.458, 124.834, 371.151] ps */
+        /* fall_transition LUT: [23.077, 33.118, 53.201, 120.144, 354.446] ps */
+        cell_rise        : 27.229;
+        cell_fall        : 26.601;
+        rise_transition  : 54.458;
+        fall_transition  : 53.201;
+      }
+      timing () {
+        related_pin  : "B";
+        timing_sense : positive_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [11.394, 16.672, 27.229, 62.417, 185.575] ps */
+        /* cell_fall LUT: [11.538, 16.559, 26.601, 60.072, 177.223] ps */
+        /* rise_transition LUT: [22.788, 33.345, 54.458, 124.834, 371.151] ps */
+        /* fall_transition LUT: [23.077, 33.118, 53.201, 120.144, 354.446] ps */
+        cell_rise        : 27.229;
+        cell_fall        : 26.601;
+        rise_transition  : 54.458;
+        fall_transition  : 53.201;
+      }
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (OR2) {
+    area               : 7.92;
+    cell_leakage_power : 0.0076;
+
+    pin (A) {
+      direction   : input;
+      capacitance : 0.0028;
+    }
+    pin (B) {
+      direction   : input;
+      capacitance : 0.0028;
+    }
+    pin (Y) {
+      direction : output;
+      function  : "A|B";
+      timing () {
+        related_pin  : "A";
+        timing_sense : positive_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [11.394, 16.672, 27.229, 62.417, 185.575] ps */
+        /* cell_fall LUT: [11.538, 16.559, 26.601, 60.072, 177.223] ps */
+        /* rise_transition LUT: [22.788, 33.345, 54.458, 124.834, 371.151] ps */
+        /* fall_transition LUT: [23.077, 33.118, 53.201, 120.144, 354.446] ps */
+        cell_rise        : 27.229;
+        cell_fall        : 26.601;
+        rise_transition  : 54.458;
+        fall_transition  : 53.201;
+      }
+      timing () {
+        related_pin  : "B";
+        timing_sense : positive_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [11.394, 16.672, 27.229, 62.417, 185.575] ps */
+        /* cell_fall LUT: [11.538, 16.559, 26.601, 60.072, 177.223] ps */
+        /* rise_transition LUT: [22.788, 33.345, 54.458, 124.834, 371.151] ps */
+        /* fall_transition LUT: [23.077, 33.118, 53.201, 120.144, 354.446] ps */
+        cell_rise        : 27.229;
+        cell_fall        : 26.601;
+        rise_transition  : 54.458;
+        fall_transition  : 53.201;
+      }
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (XOR2) {
+    area               : 7.20;
+    cell_leakage_power : 0.0110;
+
+    pin (A) {
+      direction   : input;
+      capacitance : 0.0022;
+    }
+    pin (B) {
+      direction   : input;
+      capacitance : 0.0022;
+    }
+    pin (Y) {
+      direction : output;
+      function  : "A^B";
+      timing () {
+        related_pin  : "A";
+        timing_sense : non_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [13.512, 18.790, 29.347, 64.535, 187.694] ps */
+        /* cell_fall LUT: [12.853, 17.874, 27.915, 61.387, 178.538] ps */
+        /* rise_transition LUT: [27.025, 37.581, 58.694, 129.070, 375.387] ps */
+        /* fall_transition LUT: [25.706, 35.748, 55.831, 122.774, 357.076] ps */
+        cell_rise        : 29.347;
+        cell_fall        : 27.915;
+        rise_transition  : 58.694;
+        fall_transition  : 55.831;
+      }
+      timing () {
+        related_pin  : "B";
+        timing_sense : non_unate;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [13.512, 18.790, 29.347, 64.535, 187.694] ps */
+        /* cell_fall LUT: [12.853, 17.874, 27.915, 61.387, 178.538] ps */
+        /* rise_transition LUT: [27.025, 37.581, 58.694, 129.070, 375.387] ps */
+        /* fall_transition LUT: [25.706, 35.748, 55.831, 122.774, 357.076] ps */
+        cell_rise        : 29.347;
+        cell_fall        : 27.915;
+        rise_transition  : 58.694;
+        fall_transition  : 55.831;
+      }
+    }
+  }
+
+  /* ──────────────────────────────────────────────────────────── */
+  cell (DFF) {
+    area               : 20.16;
+    cell_leakage_power : 0.0200;
+
+    pin (D) {
+      direction   : input;
+      capacitance : 0.0025;
+      timing () {
+        related_pin   : "CLK";
+        timing_type   : setup_rising;
+        rise_constraint (scalar) { values ("22.0"); }
+        fall_constraint (scalar) { values ("22.0"); }
+      }
+      timing () {
+        related_pin   : "CLK";
+        timing_type   : hold_rising;
+        rise_constraint (scalar) { values ("4.0"); }
+        fall_constraint (scalar) { values ("4.0"); }
+      }
+    }
+    pin (CLK) {
+      direction   : input;
+      capacitance : 0.0030;
+      clock       : true;
+    }
+    pin (Q) {
+      direction : output;
+      function  : "IQ";
+      timing () {
+        related_pin : "CLK";
+        timing_type : rising_edge;
+        /* LUT CL index: 0.001, 0.004, 0.010, 0.030, 0.100 pF */
+        /* cell_rise LUT: [38.482, 43.760, 54.316, 89.504, 212.663] ps */
+        /* cell_fall LUT: [36.267, 41.288, 51.329, 84.801, 201.952] ps */
+        /* rise_transition LUT: [8.797, 19.353, 40.466, 110.843, 357.160] ps */
+        /* fall_transition LUT: [8.368, 18.409, 38.492, 105.436, 339.737] ps */
+        cell_rise        : 54.316;
+        cell_fall        : 51.329;
+        rise_transition  : 40.466;
+        fall_transition  : 38.492;
+      }
+    }
+    pin (QN) {
+      direction : output;  function : "IQN";
+    }
+  }
+
+}  /* end library CELLS_180NM_FF */
