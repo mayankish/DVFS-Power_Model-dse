@@ -22,23 +22,7 @@ licensed MATLAB R2025b install — nothing is hand-entered or simulated by hand.
 
 ## Architecture
 
-```
-parse_liberty.m  -->  pe_characterize.m  -->  dvfs_levels.m
- (real .lib data)      (gate-equivalent        (5-point V/F sweep,
-                        PE energy/leakage/       alpha-power law,
-                        f_max model)             anchored on TT)
-                                |
-workload_generator.m -->  job_activity_trace.m   (per-cycle active-PE
- (synthetic matmul          (real RTL dataflow     count, from real
-  job sequence)               timing model)         skewed-feed timing)
-                                |
-                          run_dse.m  -->  results/*.csv  -->  plot_results.m  -->  results/*.png
-
-simulink/build_simulink_model.m  -->  dvfs_systolic_model.slx
-   (Stateflow DVFS-level-selection / clock-gating controller,
-    driven by job_pending + utilization, used as the policy
-    this project's power model evaluates)
-```
+![Architecture block diagram](docs/architecture_diagram.png)
 
 - **parse_liberty.m** reads the real characterized Liberty files
   (`data/liberty/cells_180nm_{TT,SS,FF}.lib`, produced by
@@ -293,3 +277,4 @@ DVFS levels from a measured `utilization` input (thresholds at
 ## License
 
 MIT
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
