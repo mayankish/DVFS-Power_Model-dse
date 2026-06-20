@@ -1,0 +1,4 @@
+corner,voltage_V,temperature_C,P_leak_per_PE_nW,f_max_MHz
+SS,1.62,125,13472.0000,202.58
+TT,1.80,25,269.4400,298.31
+FF,1.98,-40,5.3888,376.39
